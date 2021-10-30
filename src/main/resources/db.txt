@@ -1,0 +1,17 @@
+CREATE DATABASE petstore;
+USE petstore;
+
+CREATE TABLE rol (
+   id int(11) NOT NULL AUTO_INCREMENT,
+   nombre varchar(128) not null,
+   activo tinyint(1) NOT NULL,
+   PRIMARY KEY (id)
+);
+
+CREATE TABLE gente (
+   id int(11) NOT NULL AUTO_INCREMENT,
+   correo varchar(64) not null,
+   clave varchar(32) not null,
+   instante_bloqueo int(11) not null,
+   PRIMARY KEY (id)
+);

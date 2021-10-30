@@ -1,0 +1,16 @@
+services:
+  db:
+    image: mariadb:latest
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: petstore
+      MYSQL_USER: garellano
+      MYSQL_PASSWORD: secreto
+    
+  app:
+    depends_on:
+      - db
+    image: manudev2004/microservice-spring
+    ports:
+      - 4444:9999

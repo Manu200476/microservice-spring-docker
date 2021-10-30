@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    config:
+      enabled: true
+      uri: https://config.qbits.mx
+      name: petstore-back, c3p0, ValidationMessages, passay, router
+      label: master
+      allow-override: true
+      failFast: true
+      retry:
+        initialInterval: 6000
+        multiplier: 1.5
+        maxInterval: 30000
+  profiles:
+    active: ${AMBIENTE:gus}
+
+# Probar primero el servidor de configuración asi:
+# https://config.qbits.mx/application/default
+# it comes from:
+# https://github.com/qbits-mx/configuration-tienda
